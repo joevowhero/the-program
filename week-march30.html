@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do Better Weddings — Week of March 30</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a; --white: #f5f2ee; --gold: #c9a84c;
+    --red: #c0392b; --green: #2d6a4f; --blue: #1a3a5c;
+    --purple: #5b2d8e; --teal: #1a7a8a; --gray: #6b6560;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--black); color:var(--white); font-family:'Barlow',sans-serif; }
+  .page { max-width:1100px; margin:0 auto; padding:48px 32px; }
+
+  .header { border-bottom:3px solid var(--gold); padding-bottom:24px; margin-bottom:32px; display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  h1 { font-family:'Barlow Condensed',sans-serif; font-size:48px; font-weight:900; line-height:0.95; text-transform:uppercase; }
+  .header-right { text-align:right; font-size:12px; color:var(--gray); line-height:2; }
+  .header-right strong { color:var(--gold); }
+
+  .mission { background:var(--gold); color:var(--black); padding:14px 20px; margin-bottom:24px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .mission-item { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:13px; text-transform:uppercase; line-height:1.3; }
+  .mission-item span { display:block; font-family:'Barlow',sans-serif; font-weight:400; font-size:10px; text-transform:none; opacity:0.75; margin-top:2px; }
+
+  .dm-rule { background:#111; border:1px solid #222; border-left:4px solid var(--red); padding:14px 18px; margin-bottom:24px; font-size:13px; line-height:1.6; color:#ccc; }
+  .dm-rule .label { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:6px; display:block; }
+  .dm-rule strong { color:var(--white); }
+
+  .section-label { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+
+  .tracker { background:#111; border:1px solid #222; padding:24px; margin-bottom:32px; }
+  .tracker h2 { font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:900; text-transform:uppercase; margin-bottom:16px; }
+  .tracker-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .build-item { background:#0a0a0a; border:1px solid #1e1e1e; border-top:3px solid #333; padding:14px; }
+  .build-item.manychat { border-top-color:var(--red); }
+  .build-item.reels { border-top-color:var(--blue); }
+  .build-item.kit { border-top-color:var(--gold); }
+  .build-item.skool { border-top-color:var(--green); }
+  .build-name { font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:800; text-transform:uppercase; margin-bottom:4px; }
+  .build-day { font-size:10px; color:var(--gray); margin-bottom:10px; letter-spacing:1px; text-transform:uppercase; font-weight:600; }
+  .build-steps { list-style:none; display:flex; flex-direction:column; gap:4px; }
+  .build-steps li { font-size:11px; color:#999; padding-left:12px; position:relative; line-height:1.4; }
+  .build-steps li::before { content:'□'; position:absolute; left:0; color:#444; }
+
+  .days { display:flex; flex-direction:column; gap:20px; margin-bottom:40px; }
+  .day-card { background:#0f0f0f; border:1px solid #1e1e1e; overflow:hidden; }
+  .day-header { display:grid; grid-template-columns:180px 1fr 180px; align-items:center; padding:16px 20px; border-bottom:1px solid #1e1e1e; gap:20px; }
+  .day-name { font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; text-transform:uppercase; line-height:1; }
+  .day-date { font-size:11px; color:var(--gray); margin-top:2px; font-family:'Barlow Condensed',sans-serif; letter-spacing:1px; text-transform:uppercase; }
+  .day-mission { font-size:12px; color:#ccc; line-height:1.5; }
+  .day-mission strong { color:var(--white); }
+  .day-tags { display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
+  .tag { font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:3px 8px; border-radius:2px; }
+  .tag-lift { background:var(--red); color:#fff; }
+  .tag-run { background:var(--blue); color:#fff; }
+  .tag-rest { background:var(--green); color:#fff; }
+  .tag-tempo { background:var(--teal); color:#fff; }
+  .tag-build { background:#222; color:var(--gold); }
+  .tag-post { background:#1a2a1a; color:#7ec8a0; border:1px solid var(--green); }
+
+  .blocks { display:grid; grid-template-columns:repeat(5,1fr); }
+  .block { padding:12px 14px; border-right:1px solid #1a1a1a; display:flex; flex-direction:column; gap:3px; }
+  .block:last-child { border-right:none; }
+  .block-time { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:700; color:var(--gold); letter-spacing:0.5px; }
+  .block-title { font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:800; text-transform:uppercase; color:var(--white); line-height:1.2; margin-bottom:4px; }
+  .block-tasks { list-style:none; display:flex; flex-direction:column; gap:3px; }
+  .block-tasks li { font-size:10px; color:#888; line-height:1.4; padding-left:10px; position:relative; }
+  .block-tasks li::before { content:'—'; position:absolute; left:0; color:#444; }
+  .block-tasks li strong { color:#ccc; }
+  .block.meal { background:#080808; justify-content:center; align-items:center; text-align:center; }
+  .block.meal .block-title { font-size:11px; color:#3a3a3a; font-weight:600; text-transform:none; font-family:'Barlow',sans-serif; font-style:italic; }
+  .block.meal .block-time { color:#2a2a2a; }
+  .block.build { border-top:2px solid var(--gold); }
+  .block.output { border-top:2px solid var(--green); }
+  .block.social { border-top:2px solid var(--blue); }
+  .block.admin { border-top:2px solid #333; }
+  .row2 { border-top:1px solid #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="header">
+  <div>
+    <div class="brand">Do Better Weddings — @dobetterweddings</div>
+    <h1>Week of<br>March 30</h1>
+  </div>
+  <div class="header-right">
+    <strong>Theme</strong><br>Build the machine.<br><br>
+    <strong>Daily Minimum</strong><br>1 reel posted<br>20-30 DMs (3 sessions)<br>100 industry comments
+  </div>
+</div>
+
+<div class="mission">
+  <div class="mission-item">ManyChat Live<span>Mon/Tue — comment-triggered auto-DM so every CTA works</span></div>
+  <div class="mission-item">10 Trial Reels Queued<span>Mon/Tue — light edit 10 of your 40, schedule 2/day</span></div>
+  <div class="mission-item">Kit 5-Email Drip Active<span>Wednesday — 200 subscribers get Email 1 today</span></div>
+  <div class="mission-item">Skool Welcome Live<span>Thursday — new members onboard without you</span></div>
+</div>
+
+<div class="dm-rule">
+  <span class="label">Instagram DM Rule — Read Every Morning</span>
+  <strong>Do not batch DMs.</strong> 3 sessions of 8-10 manual DMs spread across the day. Once ManyChat is live, comment-triggered DMs handle volume automatically — Instagram doesn't flag those. Manual DMs are for high-value planner outreach only.
+</div>
+
+<div class="section-label">Four Machines to Build This Week</div>
+<div class="tracker">
+  <div class="tracker-grid">
+    <div class="build-item manychat">
+      <div class="build-name">ManyChat</div>
+      <div class="build-day">Monday + Tuesday</div>
+      <ul class="build-steps">
+        <li>Create account at manychat.com</li>
+        <li>Connect Instagram @dobetterweddings</li>
+        <li>Keyword trigger: "GUIDE"</li>
+        <li>Write auto-DM copy + Groom Survival Guide link</li>
+        <li>Test with dummy comment on your own post</li>
+      </ul>
+    </div>
+    <div class="build-item reels">
+      <div class="build-name">Trial Reel Queue</div>
+      <div class="build-day">Monday + Tuesday</div>
+      <ul class="build-steps">
+        <li>Pick 10 best from your existing 40</li>
+        <li>Light CapCut edit — hook text, captions, audio</li>
+        <li>Caption each: "comment GUIDE below"</li>
+        <li>Schedule 2/day Mon-Fri via IG scheduler</li>
+        <li>That's your posting handled for the week</li>
+      </ul>
+    </div>
+    <div class="build-item kit">
+      <div class="build-name">Kit 5-Email Drip</div>
+      <div class="build-day">Wednesday</div>
+      <ul class="build-steps">
+        <li>Email 1: Welcome + who this is for</li>
+        <li>Email 2: The #1 mistake grooms make</li>
+        <li>Email 3: Game Day Game Plan (soft consult pitch)</li>
+        <li>Email 4: What planners won't tell you</li>
+        <li>Email 5: The ask — Skool / Founding Partner</li>
+        <li>Activate sequence, broadcast Email 1 to 200 now</li>
+      </ul>
+    </div>
+    <div class="build-item skool">
+      <div class="build-name">Skool Welcome</div>
+      <div class="build-day">Thursday</div>
+      <ul class="build-steps">
+        <li>Write + pin welcome post in General Discussion</li>
+        <li>Add intro prompt so new members post themselves</li>
+        <li>Draft 3 starter threads to seed discussion</li>
+        <li>Connect Skool link to ManyChat "FOUNDING" flow</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Day-by-Day — March 31 through April 4</div>
+<div class="days">
+
+  <!-- MONDAY -->
+  <div class="day-card">
+    <div class="day-header" style="border-left:4px solid var(--red)">
+      <div><div class="day-name">Monday</div><div class="day-date">March 31 — Lift A @ 1 PM</div></div>
+      <div class="day-mission"><strong>Mission: ManyChat account live + 5 trial reels edited and scheduled.</strong> If ManyChat isn't done by noon, push reels to Tuesday and stay on ManyChat all day.</div>
+      <div class="day-tags"><span class="tag tag-lift">Lift A</span><span class="tag tag-build">Build Day</span></div>
+    </div>
+    <div class="blocks">
+      <div class="block build">
+        <div class="block-time">8:30–10:30 AM</div>
+        <div class="block-title">ManyChat Setup</div>
+        <ul class="block-tasks">
+          <li>Create account, connect Instagram</li>
+          <li>Set keyword trigger: <strong>"GUIDE"</strong></li>
+          <li>Write the auto-DM copy</li>
+          <li>Add Groom Survival Guide link</li>
+          <li>Test — comment on your own post</li>
+        </ul>
+      </div>
+      <div class="block build">
+        <div class="block-time">10:30–12:30 PM</div>
+        <div class="block-title">Trial Reels Pt.1</div>
+        <ul class="block-tasks">
+          <li>Pull top 5 from existing 40</li>
+          <li>Light CapCut edit on each</li>
+          <li>Write "comment GUIDE" caption</li>
+          <li>Schedule 2 posts this week</li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">12:30–2:00</div><div class="block-title">Lunch + Lift A</div></div>
+      <div class="block output">
+        <div class="block-time">2:00–4:00 PM</div>
+        <div class="block-title">Trial Reels Pt.2</div>
+        <ul class="block-tasks">
+          <li>Edit remaining 5 trial reels</li>
+          <li>Captions + CTAs for all</li>
+          <li>Schedule remainder Mon-Fri</li>
+          <li><strong>Post today's reel manually</strong></li>
+        </ul>
+      </div>
+      <div class="block social">
+        <div class="block-time">4:00–6:00 PM</div>
+        <div class="block-title">DMs + Comments</div>
+        <ul class="block-tasks">
+          <li>Session 1: 8-10 planner DMs</li>
+          <li>50 industry comments</li>
+          <li>Session 2: 8-10 couple DMs</li>
+          <li>50 more industry comments</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blocks row2">
+      <div class="block meal"><div class="block-time">6:00–7:00</div><div class="block-title">Dinner</div></div>
+      <div class="block admin">
+        <div class="block-time">7:00–9:00 PM</div>
+        <div class="block-title">Pipeline + Audit</div>
+        <ul class="block-tasks">
+          <li>OpenClaw review + CRM update</li>
+          <li>Session 3: 8-10 planner DMs</li>
+          <li>Hourly audit — paste to Claude</li>
+          <li>Tell Claude tomorrow's calendar</li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">9:00–9:30</div><div class="block-title">Shutdown</div></div>
+      <div class="block" style="grid-column:span 2"></div>
+    </div>
+  </div>
+
+  <!-- TUESDAY -->
+  <div class="day-card">
+    <div class="day-header" style="border-left:4px solid var(--blue)">
+      <div><div class="day-name">Tuesday</div><div class="day-date">April 1 — Easy Run AM</div></div>
+      <div class="day-mission"><strong>Mission: Kit Emails 1-4 written as drafts in ConvertKit.</strong> ManyChat should already be live from Monday. Verify it first thing.</div>
+      <div class="day-tags"><span class="tag tag-run">Easy Run</span><span class="tag tag-build">Build Day</span></div>
+    </div>
+    <div class="blocks">
+      <div class="block build">
+        <div class="block-time">9:15–11:15 AM</div>
+        <div class="block-title">Kit Emails 1 + 2</div>
+        <ul class="block-tasks">
+          <li><strong>Email 1:</strong> Welcome — who this is for</li>
+          <li><strong>Email 2:</strong> #1 mistake grooms make</li>
+          <li>Write both, save as drafts in Kit</li>
+          <li>Set delay: Email 2 fires Day 2</li>
+        </ul>
+      </div>
+      <div class="block build">
+        <div class="block-time">11:15–1:15 PM</div>
+        <div class="block-title">Kit Emails 3 + 4</div>
+        <ul class="block-tasks">
+          <li><strong>Email 3:</strong> Game Day Game Plan</li>
+          <li><strong>Email 4:</strong> What planners won't tell you</li>
+          <li>Write both, set delays Day 4 + Day 6</li>
+          <li>ManyChat check — any triggered convos?</li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">1:15–2:15</div><div class="block-title">Lunch</div></div>
+      <div class="block output">
+        <div class="block-time">2:15–4:15 PM</div>
+        <div class="block-title">Script CTA Reel</div>
+        <ul class="block-tasks">
+          <li>Script Thursday's keyword CTA reel</li>
+          <li>Film it if energy allows</li>
+          <li><strong>Post today's trial reel</strong></li>
+          <li>Verify trial reel queue is live</li>
+        </ul>
+      </div>
+      <div class="block social">
+        <div class="block-time">4:15–6:15 PM</div>
+        <div class="block-title">DMs + Comments</div>
+        <ul class="block-tasks">
+          <li>3 sessions of 8-10 DMs spread out</li>
+          <li>100 industry comments total</li>
+          <li>Reply to any ManyChat convos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blocks row2">
+      <div class="block meal"><div class="block-time">6:15–7:15</div><div class="block-title">Dinner</div></div>
+      <div class="block admin">
+        <div class="block-time">7:15–9:15 PM</div>
+        <div class="block-title">Pipeline + Audit</div>
+        <ul class="block-tasks">
+          <li>OpenClaw review</li>
+          <li>Final DM session</li>
+          <li>Paste audit to Claude</li>
+          <li>Tell Claude Wednesday's calendar</li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">9:15–9:30</div><div class="block-title">Shutdown</div></div>
+      <div class="block" style="grid-column:span 2"></div>
+    </div>
+  </div>
+
+  <!-- WEDNESDAY -->
+  <div class="day-card">
+    <div class="day-header" style="border-left:4px solid var(--green)">
+      <div><div class="day-name">Wednesday</div><div class="day-date">April 2 — Full Rest / Peak Output</div></div>
+      <div class="day-mission"><strong>Mission: Email 5 written, all 5 activated, Email 1 broadcast to 200 subscribers today.</strong> No workout. This is your highest output day of the week.</div>
+      <div class="day-tags"><span class="tag tag-rest">Full Rest</span><span class="tag tag-post">Emails Live</span></div>
+    </div>
+    <div class="blocks">
+      <div class="block build">
+        <div class="block-time">8:30–10:30 AM</div>
+        <div class="block-title">Kit Email 5 + Go Live</div>
+        <ul class="block-tasks">
+          <li><strong>Email 5:</strong> The ask — Skool / Founding</li>
+          <li>Activate all 5 as a sequence</li>
+          <li><strong>Broadcast Email 1 to 200 subs now</strong></li>
+          <li>Test links on mobile before sending</li>
+        </ul>
+      </div>
+      <div class="block output">
+        <div class="block-time">10:30–12:30 PM</div>
+        <div class="block-title">Scripting Batch</div>
+        <ul class="block-tasks">
+          <li>Script 3 original reels for next week</li>
+          <li>Hook-first: problem in first 3 seconds</li>
+          <li>1 planner-facing, 2 groom-facing</li>
+          <li><strong>Post today's trial reel</strong></li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">12:30–1:30</div><div class="block-title">Lunch</div></div>
+      <div class="block output">
+        <div class="block-time">1:30–3:30 PM</div>
+        <div class="block-title">Filming Batch</div>
+        <ul class="block-tasks">
+          <li>Film 3 scripted reels back to back</li>
+          <li>Light CapCut edit on each</li>
+          <li>Save — these are next week's queue</li>
+        </ul>
+      </div>
+      <div class="block social">
+        <div class="block-time">3:30–5:30 PM</div>
+        <div class="block-title">DMs + Comments</div>
+        <ul class="block-tasks">
+          <li>3 sessions of 8-10 DMs spread out</li>
+          <li>100 industry comments</li>
+          <li>Check ManyChat — reply to warm leads</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blocks row2">
+      <div class="block meal"><div class="block-time">5:30–6:30</div><div class="block-title">Dinner</div></div>
+      <div class="block admin">
+        <div class="block-time">6:30–8:30 PM</div>
+        <div class="block-title">Skool + OpenClaw</div>
+        <ul class="block-tasks">
+          <li>Draft Skool welcome post + intro prompt</li>
+          <li>Draft 3 starter discussion threads</li>
+          <li>OpenClaw pipeline review</li>
+          <li>Hourly audit to Claude</li>
+        </ul>
+      </div>
+      <div class="block build">
+        <div class="block-time">8:30–9:00 PM</div>
+        <div class="block-title">Bonus Flex</div>
+        <ul class="block-tasks"><li>Whatever's behind. Tell Claude Thursday's calendar.</li></ul>
+      </div>
+      <div class="block" style="grid-column:span 2"></div>
+    </div>
+  </div>
+
+  <!-- THURSDAY -->
+  <div class="day-card">
+    <div class="day-header" style="border-left:4px solid var(--red)">
+      <div><div class="day-name">Thursday</div><div class="day-date">April 3 — Lift B @ 1 PM</div></div>
+      <div class="day-mission"><strong>Mission: Skool welcome live + post your first ManyChat keyword CTA reel.</strong> This is the day the full funnel connects end to end for the first time.</div>
+      <div class="day-tags"><span class="tag tag-lift">Lift B</span><span class="tag tag-post">Funnel Live</span></div>
+    </div>
+    <div class="blocks">
+      <div class="block build">
+        <div class="block-time">8:30–10:30 AM</div>
+        <div class="block-title">Skool Welcome</div>
+        <ul class="block-tasks">
+          <li>Finalize + pin welcome post</li>
+          <li>Post intro prompt thread</li>
+          <li>Post 3 starter discussion threads</li>
+          <li>Connect Skool link to ManyChat "FOUNDING"</li>
+        </ul>
+      </div>
+      <div class="block output">
+        <div class="block-time">10:30–12:30 PM</div>
+        <div class="block-title">CTA Reel — Post It</div>
+        <ul class="block-tasks">
+          <li>Film keyword CTA reel (under 30 sec)</li>
+          <li>Quick CapCut edit</li>
+          <li><strong>Post it. First live ManyChat test.</strong></li>
+          <li>Watch ManyChat inbox in real time</li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">12:30–2:00</div><div class="block-title">Lunch + Lift B</div></div>
+      <div class="block social">
+        <div class="block-time">2:00–4:00 PM</div>
+        <div class="block-title">DMs + Comments</div>
+        <ul class="block-tasks">
+          <li>3 sessions of 8-10 manual DMs</li>
+          <li>100 industry comments</li>
+          <li><strong>Reply to every ManyChat reply — these are warm leads</strong></li>
+        </ul>
+      </div>
+      <div class="block admin">
+        <div class="block-time">4:00–6:00 PM</div>
+        <div class="block-title">Pipeline + Consult</div>
+        <ul class="block-tasks">
+          <li>OpenClaw review + CRM update</li>
+          <li>Consulting prep if calls are booked</li>
+          <li>Follow up on Kit Email 1 replies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blocks row2">
+      <div class="block meal"><div class="block-time">6:00–7:00</div><div class="block-title">Dinner</div></div>
+      <div class="block admin">
+        <div class="block-time">7:00–9:00 PM</div>
+        <div class="block-title">Kit + Skool Check</div>
+        <ul class="block-tasks">
+          <li>Check Kit Email 1 open rate</li>
+          <li>Engage Skool threads</li>
+          <li>Hourly audit to Claude</li>
+          <li>Tell Claude Friday's calendar</li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">9:00–9:30</div><div class="block-title">Shutdown</div></div>
+      <div class="block" style="grid-column:span 2"></div>
+    </div>
+  </div>
+
+  <!-- FRIDAY -->
+  <div class="day-card">
+    <div class="day-header" style="border-left:4px solid var(--teal)">
+      <div><div class="day-name">Friday</div><div class="day-date">April 4 — Tempo Run AM</div></div>
+      <div class="day-mission"><strong>Mission: Full funnel audit + next week's content scripted.</strong> What worked, what broke, what do you fix before Monday. Numbers on everything.</div>
+      <div class="day-tags"><span class="tag tag-tempo">Tempo Run</span><span class="tag tag-build">Review Day</span></div>
+    </div>
+    <div class="blocks">
+      <div class="block social">
+        <div class="block-time">9:15–11:15 AM</div>
+        <div class="block-title">DMs + ManyChat</div>
+        <ul class="block-tasks">
+          <li>3 sessions of 8-10 manual planner DMs</li>
+          <li>Reply to all ManyChat conversations</li>
+          <li>ID anyone ready for a consult pitch</li>
+        </ul>
+      </div>
+      <div class="block build">
+        <div class="block-time">11:15–1:15 PM</div>
+        <div class="block-title">Weekly Review</div>
+        <ul class="block-tasks">
+          <li>ManyChat: triggers vs replies</li>
+          <li>Kit Email 1: open rate + clicks</li>
+          <li>Trial reels: best engagement</li>
+          <li>Skool: new members?</li>
+          <li><strong>Paste full audit to Claude</strong></li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">1:15–2:15</div><div class="block-title">Lunch</div></div>
+      <div class="block output">
+        <div class="block-time">2:15–4:15 PM</div>
+        <div class="block-title">Next Week Scripts</div>
+        <ul class="block-tasks">
+          <li>Script 5 reels for week of April 7</li>
+          <li>2+ with "comment GUIDE" CTA</li>
+          <li>1 planner-facing reel</li>
+          <li>Schedule any already filmed</li>
+        </ul>
+      </div>
+      <div class="block admin">
+        <div class="block-time">4:15–6:15 PM</div>
+        <div class="block-title">Comments + Admin</div>
+        <ul class="block-tasks">
+          <li>100 industry comments</li>
+          <li>Clear inbox, CRM, Calendly</li>
+          <li>Stripe — any payments pending?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blocks row2">
+      <div class="block meal"><div class="block-time">6:15–7:15</div><div class="block-title">Dinner</div></div>
+      <div class="block admin">
+        <div class="block-time">7:15–9:15 PM</div>
+        <div class="block-title">Skool + Kit Check</div>
+        <ul class="block-tasks">
+          <li>Engage community threads</li>
+          <li>Verify Kit sequence firing correctly</li>
+          <li>Final weekly audit to Claude</li>
+        </ul>
+      </div>
+      <div class="block meal"><div class="block-time">9:15–9:30</div><div class="block-title">Shutdown</div></div>
+      <div class="block" style="grid-column:span 2"></div>
+    </div>
+  </div>
+
+</div><!-- end days -->
+
+<!-- AUDIT PROTOCOL -->
+<div class="section-label">Hourly Audit Protocol</div>
+<div style="background:#111;border:1px solid #222;padding:24px;margin-bottom:40px;">
+  <div style="font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;text-transform:uppercase;margin-bottom:8px;">The Hourly Mic Drop</div>
+  <p style="font-size:13px;color:var(--gray);margin-bottom:20px;line-height:1.6;max-width:700px;">Every hour: hit Whisper Flow (Right Option key), talk for 60 seconds, paste to Claude. No overthinking. Just talk. Pattern recognition happens over time.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;">
+    <div style="background:#0a0a0a;border:1px solid #1e1e1e;padding:12px 14px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">What You Did</div>
+      <div style="font-size:11px;color:#aaa;line-height:1.5;font-style:italic;">"Last hour I was in DMs. Got through 25. Planners are slower to respond than couples."</div>
+    </div>
+    <div style="background:#0a0a0a;border:1px solid #1e1e1e;padding:12px 14px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Energy Level</div>
+      <div style="font-size:11px;color:#aaa;line-height:1.5;font-style:italic;">"Feeling sharp / slow / distracted by X / got pulled into Y"</div>
+    </div>
+    <div style="background:#0a0a0a;border:1px solid #1e1e1e;padding:12px 14px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Where You're Going</div>
+      <div style="font-size:11px;color:#aaa;line-height:1.5;font-style:italic;">"Next I'm hitting Kit emails, need to draft Email 3 — the consult pitch."</div>
+    </div>
+    <div style="background:#0a0a0a;border:1px solid #1e1e1e;padding:12px 14px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Blockers</div>
+      <div style="font-size:11px;color:#aaa;line-height:1.5;font-style:italic;">"Stuck on ManyChat copy. Not sure if the CTA should say GUIDE or GROOM."</div>
+    </div>
+  </div>
+  <div style="background:var(--gold);color:var(--black);padding:12px 16px;font-size:12px;font-weight:600;line-height:1.5;">
+    PASTE YOUR HOURLY AUDIT INTO CLAUDE. Claude will course correct, flag drift, spot patterns, and help you make real-time decisions. This is your operating system.
+  </div>
+</div>
+
+<div style="border-top:1px solid #1e1e1e;padding-top:20px;display:flex;justify-content:space-between;font-size:11px;color:#444;">
+  <div>Do Better Weddings — <strong style="color:var(--gold);">@dobetterweddings</strong> — dobetterweddings.co</div>
+  <div>Speed over polish. Shortest path to getting paid. <strong style="color:var(--gold);">Week of March 30, 2026</strong></div>
+</div>
+
+</div>
+</body>
+</html>
